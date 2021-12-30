@@ -25,16 +25,10 @@ namespace LibraryManagementAPI.Controllers
             return BookService.GetBooks(filter);
         }
 
-        // POST api/values
+        [HttpPost]
         public Response Post([FromBody] Book addBookRequest)
         {
             return BookService.AddBook(addBookRequest);
-        }
-
-        // POST api/<BooksController>
-        [HttpPost]
-        public void Post([FromBody] string value)
-        {
         }
 
         // PUT api/<BooksController>/5

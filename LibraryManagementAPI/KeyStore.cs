@@ -2,8 +2,8 @@
 {
     public static class KeyStore
     {
-        public static string AuthorDBFilePath = @"C:\Users\pc\source\repos\LibrarySystemAPI\LibrarySystemAPI\Database\Authors.txt";
-        public static string BooksDBFilePath = @"C:\Users\pc\source\repos\LibrarySystemAPI\LibrarySystemAPI\Database\AuthorBooks.txt";
+        public static string AuthorDBFilePath = @"C:\Users\pc\source\repos\LibraryManagementAPI\LibraryManagementAPI\DataBase\AuthorsDB.txt";
+        public static string BooksDBFilePath = @"C:\Users\pc\source\repos\LibraryManagementAPI\LibraryManagementAPI\DataBase\BooksDB.txt";
 
         public static string AuthorAlreadyExistsMessage = "Author already exists";
 
