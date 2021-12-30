@@ -8,22 +8,27 @@ using System.Threading.Tasks;
 
 namespace LibraryManagementAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/books")]
     [ApiController]
     public class BooksController : ControllerBase
     {
         // GET: api/<BooksController>
         [HttpGet]
-        public IEnumerable<string> Get()
+        public BooksResponse Get()
         {
-            return new string[] { "value1", "value2" };
+            return BookService.GetBooks();
         }
 
-        // GET api/<BooksController>/5
-        [HttpGet("{id}")]
-        public string Get(int id)
+        [HttpGet("{filter}")]
+        public BooksResponse Get(string filter)
         {
-            return "value";
+            return BookService.GetBooks(filter);
+        }
+
+        // POST api/values
+        public Response Post([FromBody] Book addBookRequest)
+        {
+            return BookService.AddBook(addBookRequest);
         }
 
         // POST api/<BooksController>
