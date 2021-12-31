@@ -24,6 +24,29 @@ namespace LibraryManagementAPI
             }
         }
 
+        public static BooksResponse GetAllBooks()
+        {
+            var books = new List<Book>();
+            string[] lines = File.ReadAllLines(KeyStore.BooksDBFilePath);
+            foreach (string line in lines)
+            {
+                books.Add(
+                        new Book()
+                        {
+                            BookName = line.Split()[1],
+                            AuthorName = line.Split()[0],
+                            BorrowerName = line.Split()[2]
+                        }
+                 );
+                
+            }
+            return new BooksResponse()
+            {
+                Books = books,
+                Status = Status.Success
+            };
+        }
+
         public static BooksResponse GetAvailableBooks(bool isAvailable)
         {
 

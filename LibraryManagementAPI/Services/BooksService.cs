@@ -16,7 +16,7 @@
             {
                 return BooksDBReader.GetAvailableBooks(false);
             }
-            return null;
+            return BooksDBReader.GetAllBooks();
         }
     }
 }
